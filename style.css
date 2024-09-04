@@ -1,0 +1,35 @@
+/* Basic reset for margins and background color */
+body {
+    margin: 0; /* Remove default margin */
+    background-color: black; /* Set background color to black for high contrast */
+    height: 100vh; /* Make the body full height of the viewport */
+    overflow: hidden; /* Hide scrollbars */
+}
+
+/* Styling for the heart-shaped elements that follow the cursor */
+span {
+    width: 100px; /* Default width for heart images */
+    height: 100px; /* Default height for heart images */
+    position: absolute; /* Position elements absolutely for precise placement */
+    pointer-events: none; /* Prevent heart elements from blocking other interactions */
+    background: url("https://cdn3.iconfinder.com/data/icons/emoji-1-4/64/_heart_sexy_love-512.png"); /* Heart image as background */
+    background-size: cover; /* Ensure the image covers the entire span */
+    left: 50%; /* Center horizontally */
+    top: 50%; /* Center vertically */
+    transform: translate(-50%, -50%); /* Adjust position to account for element size */
+    animation: animate 6s linear; /* Apply the animation */
+}
+
+/* Keyframes for animating the heart elements */
+@keyframes animate {
+    0% {
+        transform: translate(-50%, -50%); /* Start from the center */
+        opacity: 1; /* Fully visible */
+        filter: hue-rotate(0); /* No color rotation initially */
+    }
+    100% {
+        transform: translate(-50%, -5000%); /* Move upwards off-screen */
+        opacity: 0; /* Fade out */
+        filter: hue-rotate(1000deg); /* Rotate colors for a dynamic effect */
+    }
+}
